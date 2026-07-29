@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow-x:hidden;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:380px;
+    margin:auto;
+    background:#fff;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    animation:pop 1s ease;
+}
+@keyframes pop{
+    from{
+        transform:scale(.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+h1{
+    color:#ff4081;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+h2{
+    color:#e91e63;
+    margin-bottom:15px;
+}
+
+.photo{
+    width:90px;
+    height:200px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #ff4081;
+    margin-bottom:15px;
+}
+
+.message{
+    color:#444;
+    font-size:17px;
+    line-height:1.6;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4081;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e91e63;
+}
+
+.hidden{
+    display:none;
+}
+
+#surprise{
+    margin-top:20px;
+    font-size:22px;
+    color:#ff1744;
+    animation:
+    @keyframes fall{
+    from{
+        transform:translateY(-20px);
+        opacity:1;
+    }
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+/* Floating Balloons */
+.balloon{
+    position:fixed;
+    bottom:-120px;
+    font-size:40px;
+    animation:floatUp 10s linear infinite;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0);
+    }
+    100%{
+        transform:translateY(-120vh);
+    }
+}
+
+/* Confetti */
+.confetti{
+    position:fixed;
+    top:-10px;
+    font-size:18px;
+    animation:confettiFall 5s linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
